@@ -1,0 +1,41 @@
+有错误，不理解不会做
+/"#include<bits/stdc++.h>
+using namespace std;
+//N只动物，一直所有动物属于A,B,C中的一种，已知A吃B，B吃C，C吃A\
+按照一下信息给出两种信息K条
+//1.x,y属于同一物种;2.x吃y
+//然而这些信息可能出错，请求出有多少条是有错的
+int N,K;
+#define MAX_N 1001
+int T[MAX_N],X[MAX_N],Y[MAX_N];
+//T是类型信息
+void init(){
+    for(int i=0;i<=N*3;i++){
+        X[i]=i;
+    }
+}
+int find(int x){
+    if(X[x]==x) return x;
+    else return X[x]=find(X[x]);
+}
+
+bool same(int x,int y){
+    //判断是否在同一集合
+    return find(x)==find(y);
+}
+void solve(){
+    init();
+    int ans=0;
+    for(int i=0;i<K;i++){
+        int t=T[i];
+        int x=X[i]-1,y=Y[i]-1;
+        if(x<0||y<0||x>=N||y>=N){
+            ans++;
+            continue;
+        }
+        if(t==1){
+            //x,y同一类
+
+        }
+    }
+}"/
